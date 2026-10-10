@@ -313,7 +313,7 @@
       <rect class="node-success" x="2390" y="766" width="282" height="98" rx="12"/>
       <text class="node-kicker" x="2408" y="792">经营决策</text>
       <text class="node-title" x="2408" y="820">查看价值 → 续费 / 加购</text>
-      <text class="node-body" x="2408" y="846">到期后 14 天宽限，不突然中断现场</text>
+      <text class="node-body" x="2408" y="846">到期后 5 天宽限，不突然中断现场</text>
     </g>
   </g>
 
@@ -388,7 +388,7 @@
       <text class="node-body" x="1682" y="1624">必要时转浏览器/应用商店，标记原策略待复测</text>
       <rect class="node-error" x="2156" y="1540" width="450" height="112" rx="12"/>
       <text class="node-title" x="2176" y="1570">套餐到期 / 超额</text>
-      <text class="node-body" x="2176" y="1598">暂停新增与新生成；已有贴片宽限 14 天</text>
+      <text class="node-body" x="2176" y="1598">暂停新增与新生成；已有贴片宽限 5 天</text>
       <text class="node-body" x="2176" y="1624">持续提醒续费，现场不突然失效</text>
     </g>
     <path class="error-line" d="M 780 1235 V 1518 H 610 V 1540"/>
