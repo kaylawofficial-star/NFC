@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="3200" height="1900" viewBox="0 0 3200 1900" role="img" aria-labelledby="svg-title svg-desc">
+  <title id="svg-title">口腔医院 NFC 碰碰贴商业版 V1 完整产品 Workflow</title>
+  <desc id="svg-desc">六条角色泳道与七个产品阶段，覆盖机构开通、双审、贴片绑定、患者触达、AI 内容生成、三平台发布、异常恢复、数据复盘和续费。</desc>
+  <defs>
+    <filter id="shadow" x="-10%" y="-15%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.10"/>
+    </filter>
+    <marker id="arrow-main" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#0F172A"/>
+    </marker>
+    <marker id="arrow-error" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#DC2626"/>
+    </marker>
+    <marker id="arrow-data" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#0369A1"/>
+    </marker>
+    <style>
+      text { font-family: Inter, "Noto Sans SC", "Microsoft YaHei", sans-serif; letter-spacing: 0; }
+      .title { font-size: 42px; font-weight: 700; fill: #0F172A; }
+      .subtitle { font-size: 19px; font-weight: 400; fill: #475569; }
+      .stage-num { font-size: 14px; font-weight: 700; fill: #0369A1; }
+      .stage-title { font-size: 20px; font-weight: 700; fill: #0F172A; }
+      .lane-num { font-size: 15px; font-weight: 700; fill: #FFFFFF; }
+      .lane-title { font-size: 21px; font-weight: 700; fill: #0F172A; }
+      .lane-sub { font-size: 14px; font-weight: 400; fill: #475569; }
+      .node-title { font-size: 17px; font-weight: 700; fill: #0F172A; }
+      .node-body { font-size: 14px; font-weight: 400; fill: #334155; }
+      .node-kicker { font-size: 12px; font-weight: 700; fill: #0369A1; }
+      .small { font-size: 13px; font-weight: 500; fill: #475569; }
+      .legend { font-size: 14px; font-weight: 600; fill: #334155; }
+      .metric { font-size: 25px; font-weight: 700; fill: #0F172A; }
+      .metric-label { font-size: 14px; font-weight: 600; fill: #475569; }
+      .section-title { font-size: 18px; font-weight: 700; fill: #0F172A; }
+      .boundary { font-size: 14px; font-weight: 600; fill: #7F1D1D; }
+      .main-line { fill: none; stroke: #0F172A; stroke-width: 3; marker-end: url(#arrow-main); }
+      .error-line { fill: none; stroke: #DC2626; stroke-width: 3; stroke-dasharray: 12 9; marker-end: url(#arrow-error); }
+      .data-line { fill: none; stroke: #0369A1; stroke-width: 3; stroke-dasharray: 3 8; marker-end: url(#arrow-data); }
+      .node { fill: #FFFFFF; stroke: #CBD5E1; stroke-width: 1.5; filter: url(#shadow); }
+      .node-system { fill: #EFF6FF; stroke: #60A5FA; stroke-width: 1.5; filter: url(#shadow); }
+      .node-human { fill: #FFFFFF; stroke: #94A3B8; stroke-width: 1.5; filter: url(#shadow); }
+      .node-decision { fill: #FFFBEB; stroke: #F59E0B; stroke-width: 1.5; filter: url(#shadow); }
+      .node-success { fill: #F0FDF4; stroke: #22C55E; stroke-width: 1.5; filter: url(#shadow); }
+      .node-error { fill: #FEF2F2; stroke: #EF4444; stroke-width: 1.5; filter: url(#shadow); }
+    </style>
+  </defs>
+
+  <rect id="canvas-background" x="0" y="0" width="3200" height="1900" fill="#F8FAFC"/>
+
+  <g id="header">
+    <text class="title" x="48" y="66">口腔医院 NFC 碰碰贴 · 商业版 V1 完整产品 Workflow</text>
+    <text class="subtitle" x="48" y="104">从机构签约到真实发布和续费：责任、状态、异常恢复与数据回流</text>
+    <rect x="2780" y="38" width="366" height="78" rx="10" fill="#0F172A"/>
+    <text x="2810" y="70" font-size="14" font-weight="700" fill="#FFFFFF">PRODUCT DESIGN · 2026-10-10</text>
+    <text x="2810" y="96" font-size="16" font-weight="500" fill="#CBD5E1">单体民营口腔机构 · 正式商业版 V1</text>
+  </g>
+
+  <g id="legend">
+    <rect x="48" y="132" width="3098" height="62" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text class="legend" x="76" y="170">连线图例</text>
+    <path class="main-line" d="M 178 163 H 270"/>
+    <text class="legend" x="292" y="170">主流程</text>
+    <path class="error-line" d="M 408 163 H 500"/>
+    <text class="legend" x="522" y="170">异常 / 降级</text>
+    <path class="data-line" d="M 680 163 H 772"/>
+    <text class="legend" x="794" y="170">数据回流</text>
+    <rect x="1050" y="146" width="18" height="18" rx="4" fill="#EFF6FF" stroke="#60A5FA"/>
+    <text class="legend" x="1080" y="161">系统自动</text>
+    <rect x="1222" y="146" width="18" height="18" rx="4" fill="#FFFFFF" stroke="#94A3B8"/>
+    <text class="legend" x="1252" y="161">人工操作 / 判断</text>
+    <rect x="1488" y="146" width="18" height="18" rx="4" fill="#FFFBEB" stroke="#F59E0B"/>
+    <text class="legend" x="1518" y="161">决策 / 前置检查</text>
+    <text x="2308" y="170" font-size="14" font-weight="700" fill="#7F1D1D">红线：患者自主发布 · 系统不代发 · 负面感受不拦截</text>
+  </g>
+
+  <g id="stage-headers">
+    <rect x="280" y="216" width="340" height="98" rx="12" fill="#E0F2FE" stroke="#7DD3FC"/>
+    <text class="stage-num" x="300" y="248">01</text><text class="stage-title" x="300" y="280">签约与开通</text>
+    <rect x="628" y="216" width="340" height="98" rx="12" fill="#ECFEFF" stroke="#67E8F9"/>
+    <text class="stage-num" x="648" y="248">02</text><text class="stage-title" x="648" y="280">资料与双审</text>
+    <rect x="976" y="216" width="340" height="98" rx="12" fill="#F0FDF4" stroke="#86EFAC"/>
+    <text class="stage-num" x="996" y="248">03</text><text class="stage-title" x="996" y="280">贴片绑定上线</text>
+    <rect x="1324" y="216" width="340" height="98" rx="12" fill="#FFF7ED" stroke="#FDBA74"/>
+    <text class="stage-num" x="1344" y="248">04</text><text class="stage-title" x="1344" y="280">患者触达</text>
+    <rect x="1672" y="216" width="340" height="98" rx="12" fill="#F5F3FF" stroke="#C4B5FD"/>
+    <text class="stage-num" x="1692" y="248">05</text><text class="stage-title" x="1692" y="280">AI 内容生成</text>
+    <rect x="2020" y="216" width="340" height="98" rx="12" fill="#FDF2F8" stroke="#F9A8D4"/>
+    <text class="stage-num" x="2040" y="248">06</text><text class="stage-title" x="2040" y="280">三平台发布</text>
+    <rect x="2368" y="216" width="340" height="98" rx="12" fill="#F1F5F9" stroke="#CBD5E1"/>
+    <text class="stage-num" x="2388" y="248">07</text><text class="stage-title" x="2388" y="280">数据复盘与续费</text>
+  </g>
+
+  <g id="swimlane-grid">
+    <rect x="40" y="340" width="2668" height="1140" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+    <rect x="40" y="340" width="240" height="190" fill="#F0F9FF"/>
+    <rect x="40" y="530" width="240" height="190" fill="#F8FAFC"/>
+    <rect x="40" y="720" width="240" height="190" fill="#F0FDF4"/>
+    <rect x="40" y="910" width="240" height="190" fill="#FFF7ED"/>
+    <rect x="40" y="1100" width="240" height="190" fill="#EFF6FF"/>
+    <rect x="40" y="1290" width="240" height="190" fill="#FDF2F8"/>
+    <g stroke="#E2E8F0" stroke-width="1.5">
+      <line x1="40" y1="530" x2="2708" y2="530"/><line x1="40" y1="720" x2="2708" y2="720"/>
+      <line x1="40" y1="910" x2="2708" y2="910"/><line x1="40" y1="1100" x2="2708" y2="1100"/>
+      <line x1="40" y1="1290" x2="2708" y2="1290"/>
+      <line x1="280" y1="340" x2="280" y2="1480"/>
+      <line x1="628" y1="340" x2="628" y2="1480"/><line x1="976" y1="340" x2="976" y2="1480"/>
+      <line x1="1324" y1="340" x2="1324" y2="1480"/><line x1="1672" y1="340" x2="1672" y2="1480"/>
+      <line x1="2020" y1="340" x2="2020" y2="1480"/><line x1="2368" y1="340" x2="2368" y2="1480"/>
+    </g>
+  </g>
+
+  <g id="lane-labels">
+    <circle cx="78" cy="392" r="22" fill="#0369A1"/><text class="lane-num" x="73" y="398">1</text>
+    <text class="lane-title" x="112" y="392">患者</text><text class="lane-sub" x="112" y="420">匿名使用 · 自主发布</text>
+    <circle cx="78" cy="582" r="22" fill="#475569"/><text class="lane-num" x="73" y="588">2</text>
+    <text class="lane-title" x="112" y="582">机构运营</text><text class="lane-sub" x="112" y="610">资料 · 贴片 · 日常运行</text>
+    <circle cx="78" cy="772" r="22" fill="#15803D"/><text class="lane-num" x="73" y="778">3</text>
+    <text class="lane-title" x="112" y="772">院长 / 管理员</text><text class="lane-sub" x="112" y="800">终审 · 风险 · 经营结果</text>
+    <circle cx="78" cy="962" r="22" fill="#C2410C"/><text class="lane-num" x="73" y="968">4</text>
+    <text class="lane-title" x="112" y="962">平台运营 / 合规</text><text class="lane-sub" x="112" y="990">开通 · 初审 · 异常</text>
+    <circle cx="78" cy="1152" r="22" fill="#1D4ED8"/><text class="lane-num" x="73" y="1158">5</text>
+    <text class="lane-title" x="112" y="1152">AI / 合规 / 适配</text><text class="lane-sub" x="112" y="1180">自动化 · 策略 · 可观测</text>
+    <circle cx="78" cy="1342" r="22" fill="#BE185D"/><text class="lane-num" x="73" y="1348">6</text>
+    <text class="lane-title" x="112" y="1342">外部平台</text><text class="lane-sub" x="112" y="1370">点评/美团 · 小红书 · 抖音</text>
+  </g>
+
+  <g id="connectors-main">
+    <path class="main-line" d="M 420 795 V 1005 H 450"/>
+    <path class="main-line" d="M 568 1005 H 648 V 625 H 674"/>
+    <path class="main-line" d="M 820 625 V 1190 H 680"/>
+    <path class="main-line" d="M 820 1190 V 1005 H 834"/>
+    <path class="main-line" d="M 942 1005 V 815 H 846"/>
+    <path class="main-line" d="M 946 815 H 1012 V 625 H 1030"/>
+    <path class="main-line" d="M 1170 625 V 1190 H 1030"/>
+    <path class="main-line" d="M 1258 1190 H 1350 V 435 H 1372"/>
+    <path class="main-line" d="M 1540 435 H 1696"/>
+    <path class="main-line" d="M 1840 492 V 1155"/>
+    <path class="main-line" d="M 1962 1155 H 2046 V 435 H 2062"/>
+    <path class="main-line" d="M 2240 475 V 1340"/>
+    <path class="main-line" d="M 2240 1438 V 498 H 2260"/>
+    <path class="main-line" d="M 2312 498 H 2410 V 1155"/>
+    <path class="main-line" d="M 2536 1155 V 1005 H 2408"/>
+    <path class="main-line" d="M 2536 1005 V 625 H 2408"/>
+    <path class="main-line" d="M 2536 625 V 815 H 2408"/>
+  </g>
+
+  <g id="stage-1-nodes">
+    <g id="node-contract-confirm">
+      <rect class="node-human" x="304" y="752" width="232" height="86" rx="12"/>
+      <text class="node-kicker" x="322" y="778">商业前置</text>
+      <text class="node-title" x="322" y="804">确认套餐与合同</text>
+      <text class="node-body" x="322" y="827">5 / 10 个医生贴或加购包</text>
+    </g>
+    <g id="node-tenant-open">
+      <rect class="node-human" x="332" y="962" width="236" height="86" rx="12"/>
+      <text class="node-kicker" x="350" y="988">平台协助</text>
+      <text class="node-title" x="350" y="1014">审核订单与开通</text>
+      <text class="node-body" x="350" y="1037">人工仅处理异常配置</text>
+    </g>
+    <g id="node-auto-create-tenant">
+      <rect class="node-system" x="304" y="1147" width="264" height="86" rx="12"/>
+      <text class="node-kicker" x="322" y="1173">订单触发</text>
+      <text class="node-title" x="322" y="1199">自动创建租户、机构、权益</text>
+      <text class="node-body" x="322" y="1222">初始账号 + 套餐 + 交付清单</text>
+    </g>
+  </g>
+
+  <g id="stage-2-nodes">
+    <g id="node-bulk-import">
+      <rect class="node-human" x="654" y="576" width="240" height="98" rx="12"/>
+      <text class="node-kicker" x="672" y="602">批量导入</text>
+      <text class="node-title" x="672" y="628">机构、医生、项目、素材</text>
+      <text class="node-body" x="672" y="651">字段预填，缺失项可补齐</text>
+    </g>
+    <g id="node-auto-precheck">
+      <rect class="node-system" x="654" y="1147" width="266" height="86" rx="12"/>
+      <text class="node-kicker" x="672" y="1173">自动预检</text>
+      <text class="node-title" x="672" y="1199">完整性 · 授权 · 敏感表达</text>
+      <text class="node-body" x="672" y="1222">重复素材、期限和使用范围</text>
+    </g>
+    <g id="node-platform-review">
+      <rect class="node-human" x="834" y="962" width="112" height="86" rx="12"/>
+      <text class="node-kicker" x="852" y="988">初审</text>
+      <text class="node-title" x="852" y="1014">平台审核</text>
+      <text class="node-body" x="852" y="1037">合规与授权</text>
+    </g>
+    <g id="node-hospital-review">
+      <rect class="node-human" x="748" y="772" width="198" height="86" rx="12"/>
+      <text class="node-kicker" x="766" y="798">终审</text>
+      <text class="node-title" x="766" y="824">医院确认真实性</text>
+      <text class="node-body" x="766" y="847">通过后才进入生成库</text>
+    </g>
+  </g>
+
+  <g id="stage-3-nodes">
+    <g id="node-bind-tag">
+      <rect class="node-human" x="1012" y="576" width="252" height="98" rx="12"/>
+      <text class="node-kicker" x="1030" y="602">唯一 ID</text>
+      <text class="node-title" x="1030" y="628">批量绑定贴片 → 医生</text>
+      <text class="node-body" x="1030" y="651">一张贴片对应具体机构和医生</text>
+    </g>
+    <g id="node-go-live-check">
+      <rect class="node-system" x="1012" y="1147" width="246" height="86" rx="12"/>
+      <text class="node-kicker" x="1030" y="1173">上线门禁</text>
+      <text class="node-title" x="1030" y="1199">权益 + 生成 + 落点检查</text>
+      <text class="node-body" x="1030" y="1222">通过后启用；失败进异常队列</text>
+    </g>
+    <g id="node-enable-service">
+      <rect class="node-success" x="1020" y="772" width="204" height="86" rx="12"/>
+      <text class="node-kicker" x="1038" y="798">上线</text>
+      <text class="node-title" x="1038" y="824">启用医生专属贴</text>
+      <text class="node-body" x="1038" y="847">二维码与 NFC 指向同一入口</text>
+    </g>
+  </g>
+
+  <g id="stage-4-nodes">
+    <g id="node-patient-entry">
+      <rect class="node-human" x="1350" y="374" width="190" height="122" rx="12"/>
+      <text class="node-kicker" x="1368" y="400">患者入口</text>
+      <text class="node-title" x="1368" y="428">触碰 NFC / 扫码</text>
+      <text class="node-body" x="1368" y="454">无需注册或手机号</text>
+      <text class="node-body" x="1368" y="478">直接进入医生专属页</text>
+    </g>
+    <g id="node-resolve-binding">
+      <rect class="node-system" x="1350" y="1138" width="278" height="104" rx="12"/>
+      <text class="node-kicker" x="1368" y="1164">入口解析</text>
+      <text class="node-title" x="1368" y="1190">读取贴片绑定与状态</text>
+      <text class="node-body" x="1368" y="1214">机构/医生正确率必须 100%</text>
+      <text class="node-body" x="1368" y="1236">患者不确认、不重选医生</text>
+    </g>
+  </g>
+
+  <g id="stage-5-nodes">
+    <g id="node-select-platform">
+      <rect class="node-human" x="1696" y="354" width="276" height="90" rx="12"/>
+      <text class="node-kicker" x="1714" y="378">平台 / 任务</text>
+      <text class="node-title" x="1714" y="404">选择内容目标</text>
+      <text class="node-body" x="1714" y="430">点评三任务 · 小红书图文 · 抖音视频</text>
+    </g>
+    <g id="node-review-content">
+      <rect class="node-human" x="1696" y="440" width="276" height="72" rx="12" opacity="0"/>
+    </g>
+    <g id="node-ai-generate">
+      <rect class="node-system" x="1696" y="1118" width="266" height="146" rx="12"/>
+      <text class="node-kicker" x="1714" y="1144">可信资料库</text>
+      <text class="node-title" x="1714" y="1172">生成 1 份可编辑内容</text>
+      <text class="node-body" x="1714" y="1198">只读取双审通过的资料</text>
+      <text class="node-body" x="1714" y="1222">检查虚构体验、疗效、肖像</text>
+      <text class="node-body" x="1714" y="1246">失败则返回预审中性模板</text>
+    </g>
+    <g id="node-edit-preview">
+      <rect class="node-human" x="1696" y="452" width="276" height="58" rx="10"/>
+      <text class="node-title" x="1714" y="478">预览 · 编辑 · 换一篇</text>
+      <text class="node-body" x="1714" y="500">项目/感受/素材均可选</text>
+    </g>
+  </g>
+
+  <g id="stage-6-nodes">
+    <g id="node-prepare-publish">
+      <rect class="node-decision" x="2046" y="366" width="266" height="130" rx="12"/>
+      <text class="node-kicker" x="2064" y="392">发布前检查</text>
+      <text class="node-title" x="2064" y="420">复制文案 · 保存素材</text>
+      <text class="node-body" x="2064" y="446">点评：提醒消费凭证</text>
+      <text class="node-body" x="2064" y="470">小红书：标题/正文分开复制</text>
+      <text class="node-body" x="2064" y="492">抖音：视频先保存</text>
+    </g>
+    <g id="node-platform-adapter">
+      <rect class="node-system" x="2046" y="1115" width="274" height="124" rx="12"/>
+      <text class="node-kicker" x="2064" y="1141">适配决策</text>
+      <text class="node-title" x="2064" y="1169">检测系统、App、登录、权限</text>
+      <text class="node-body" x="2064" y="1195">选择已验证的最佳落点</text>
+      <text class="node-body" x="2064" y="1219">策略可热更新且带版本</text>
+    </g>
+    <g id="node-external-tasks">
+      <rect class="node" x="2042" y="1310" width="290" height="152" rx="12"/>
+      <text class="node-kicker" x="2060" y="1336">有效发布页</text>
+      <text class="node-title" x="2060" y="1364">外部平台执行</text>
+      <text class="node-body" x="2060" y="1392">① 点评/美团：评价 · 打卡 · 收藏</text>
+      <text class="node-body" x="2060" y="1418">② 小红书：图文发布</text>
+      <text class="node-body" x="2060" y="1444">③ 抖音：短视频发布</text>
+    </g>
+    <g id="node-confirm-publish">
+      <rect class="node-success" x="2260" y="452" width="82" height="92" rx="12"/>
+      <text class="node-title" x="2275" y="480">主动</text>
+      <text class="node-title" x="2275" y="504">发布</text>
+      <text class="node-body" x="2275" y="530">可返回确认</text>
+    </g>
+  </g>
+
+  <g id="stage-7-nodes">
+    <g id="node-data-funnel">
+      <rect class="node-system" x="2390" y="1115" width="282" height="124" rx="12"/>
+      <text class="node-kicker" x="2408" y="1141">去标识化事件</text>
+      <text class="node-title" x="2408" y="1169">形成端到端发布漏斗</text>
+      <text class="node-body" x="2408" y="1195">入口 → 生成 → 交付 → 落点</text>
+      <text class="node-body" x="2408" y="1219">→ 患者确认；不存文案/账号</text>
+    </g>
+    <g id="node-monitor-ops">
+      <rect class="node-human" x="2390" y="962" width="282" height="86" rx="12"/>
+      <text class="node-kicker" x="2408" y="988">可观测性</text>
+      <text class="node-title" x="2408" y="1014">监控失败组合与策略</text>
+      <text class="node-body" x="2408" y="1037">按平台、系统、App 版本告警</text>
+    </g>
+    <g id="node-review-operations">
+      <rect class="node-human" x="2390" y="576" width="282" height="98" rx="12"/>
+      <text class="node-kicker" x="2408" y="602">日常运营</text>
+      <text class="node-title" x="2408" y="628">复盘漏斗与失败节点</text>
+      <text class="node-body" x="2408" y="651">机构定期录入评价总量/净增量</text>
+    </g>
+    <g id="node-renewal">
+      <rect class="node-success" x="2390" y="766" width="282" height="98" rx="12"/>
+      <text class="node-kicker" x="2408" y="792">经营决策</text>
+      <text class="node-title" x="2408" y="820">查看价值 → 续费 / 加购</text>
+      <text class="node-body" x="2408" y="846">到期后 14 天宽限，不突然中断现场</text>
+    </g>
+  </g>
+
+  <g id="sidebar">
+    <rect x="2740" y="216" width="406" height="1264" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+    <text class="section-title" x="2770" y="260">成功标准</text>
+    <text class="small" x="2770" y="288">不以“AI 已生成”作为产品成功</text>
+    <rect x="2770" y="314" width="346" height="118" rx="12" fill="#0F172A"/>
+    <text x="2792" y="344" font-size="13" font-weight="700" fill="#7DD3FC">北极星指标</text>
+    <text x="2792" y="380" font-size="24" font-weight="700" fill="#FFFFFF">患者确认发布率</text>
+    <text x="2792" y="408" font-size="14" fill="#CBD5E1">“我已发布”会话 ÷ 成功进入会话</text>
+
+    <text class="section-title" x="2770" y="478">V1 验收红线</text>
+    <g id="metrics">
+      <rect x="2770" y="500" width="164" height="100" rx="10" fill="#EFF6FF" stroke="#BFDBFE"/>
+      <text class="metric" x="2790" y="542">≥99%</text><text class="metric-label" x="2790" y="570">入口成功</text>
+      <rect x="2952" y="500" width="164" height="100" rx="10" fill="#F0FDF4" stroke="#BBF7D0"/>
+      <text class="metric" x="2972" y="542">100%</text><text class="metric-label" x="2972" y="570">绑定正确</text>
+      <rect x="2770" y="616" width="164" height="100" rx="10" fill="#F5F3FF" stroke="#DDD6FE"/>
+      <text class="metric" x="2790" y="658">≥98%</text><text class="metric-label" x="2790" y="686">首次生成</text>
+      <rect x="2952" y="616" width="164" height="100" rx="10" fill="#FFF7ED" stroke="#FED7AA"/>
+      <text class="metric" x="2972" y="658">≥99%</text><text class="metric-label" x="2972" y="686">文案复制</text>
+      <rect x="2770" y="732" width="164" height="100" rx="10" fill="#FDF2F8" stroke="#FBCFE8"/>
+      <text class="metric" x="2790" y="774">≥95%</text><text class="metric-label" x="2790" y="802">素材保存</text>
+      <rect x="2952" y="732" width="164" height="100" rx="10" fill="#ECFEFF" stroke="#A5F3FC"/>
+      <text class="metric" x="2972" y="774">≥95%</text><text class="metric-label" x="2972" y="802">有效落点</text>
+    </g>
+    <rect x="2770" y="856" width="346" height="82" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
+    <text class="metric" x="2790" y="893">≤5 动作 · ≤60 秒</text>
+    <text class="metric-label" x="2790" y="920">无患者素材基础路径中位时长</text>
+
+    <text class="section-title" x="2770" y="988">责任边界</text>
+    <g id="boundaries">
+      <rect x="2770" y="1010" width="346" height="72" rx="10" fill="#FEF2F2" stroke="#FCA5A5"/>
+      <text class="boundary" x="2790" y="1040">01  贴片预绑定医院/医生</text>
+      <text class="small" x="2790" y="1064">患者不确认、不选择、不纠错</text>
+      <rect x="2770" y="1094" width="346" height="72" rx="10" fill="#FEF2F2" stroke="#FCA5A5"/>
+      <text class="boundary" x="2790" y="1124">02  AI 只读取已通过双审资料</text>
+      <text class="small" x="2790" y="1148">不虚构经历、疗效或患者形象</text>
+      <rect x="2770" y="1178" width="346" height="72" rx="10" fill="#FEF2F2" stroke="#FCA5A5"/>
+      <text class="boundary" x="2790" y="1208">03  患者在本人账号主动发布</text>
+      <text class="small" x="2790" y="1232">不登录、不代发、不伪造成功</text>
+      <rect x="2770" y="1262" width="346" height="72" rx="10" fill="#FEF2F2" stroke="#FCA5A5"/>
+      <text class="boundary" x="2790" y="1292">04  负面感受不被拦截</text>
+      <text class="small" x="2790" y="1316">院内反馈为并行入口，不代替公开发布</text>
+    </g>
+    <text class="section-title" x="2770" y="1380">数据保留</text>
+    <text class="small" x="2770" y="1410">内容/素材：默认 7 天后删除</text>
+    <text class="small" x="2770" y="1436">事件：去标识化后用于漏斗分析</text>
+  </g>
+
+  <g id="exception-recovery-band">
+    <rect x="40" y="1512" width="3106" height="170" rx="16" fill="#FFF7F7" stroke="#FCA5A5" stroke-width="2"/>
+    <text x="68" y="1550" font-size="18" font-weight="700" fill="#991B1B">跨阶段异常恢复带</text>
+    <text class="small" x="68" y="1578">任何失败都要有责任人、恢复动作和可重试入口；患者已生成内容不丢失。</text>
+    <g id="recovery-cards">
+      <rect class="node-error" x="420" y="1540" width="380" height="112" rx="12"/>
+      <text class="node-title" x="440" y="1570">资料 / 审核异常</text>
+      <text class="node-body" x="440" y="1598">缺失、授权过期、拒绝 → 补齐/重审</text>
+      <text class="node-body" x="440" y="1624">进入平台异常队列，不进入生成库</text>
+      <rect class="node-error" x="834" y="1540" width="380" height="112" rx="12"/>
+      <text class="node-title" x="854" y="1570">贴片 / 绑定异常</text>
+      <text class="node-body" x="854" y="1598">未绑定、停用、重复绑定 → 维护页</text>
+      <text class="node-body" x="854" y="1624">自动告警；不让患者自行选医生</text>
+      <rect class="node-error" x="1248" y="1540" width="380" height="112" rx="12"/>
+      <text class="node-title" x="1268" y="1570">AI 超时 / 合规失败</text>
+      <text class="node-body" x="1268" y="1598">限定次数重试 → 预审中性模板</text>
+      <text class="node-body" x="1268" y="1624">不向患者暴露技术错误细节</text>
+      <rect class="node-error" x="1662" y="1540" width="460" height="112" rx="12"/>
+      <text class="node-title" x="1682" y="1570">权限 / App / 深链异常</text>
+      <text class="node-body" x="1682" y="1598">重试 → 备用深链 → 正确门店页 → 手动指引</text>
+      <text class="node-body" x="1682" y="1624">必要时转浏览器/应用商店，标记原策略待复测</text>
+      <rect class="node-error" x="2156" y="1540" width="450" height="112" rx="12"/>
+      <text class="node-title" x="2176" y="1570">套餐到期 / 超额</text>
+      <text class="node-body" x="2176" y="1598">暂停新增与新生成；已有贴片宽限 14 天</text>
+      <text class="node-body" x="2176" y="1624">持续提醒续费，现场不突然失效</text>
+    </g>
+    <path class="error-line" d="M 780 1235 V 1518 H 610 V 1540"/>
+    <path class="error-line" d="M 1135 1235 V 1518 H 1024 V 1540"/>
+    <path class="error-line" d="M 1829 1264 V 1518 H 1438 V 1540"/>
+    <path class="error-line" d="M 2183 1239 V 1518 H 1892 V 1540"/>
+  </g>
+
+  <g id="data-feedback-band">
+    <rect x="40" y="1710" width="3106" height="132" rx="16" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+    <text x="68" y="1750" font-size="18" font-weight="700" fill="#1E3A8A">数据回流带</text>
+    <text class="small" x="68" y="1778">系统可观测事件、患者主动确认和机构手工录入的平台结果必须分开展示，不宣称单条评价精确归因。</text>
+    <g id="event-chain">
+      <text x="420" y="1812" font-size="16" font-weight="700" fill="#0F172A">入口成功</text>
+      <text x="574" y="1812" font-size="16" fill="#0369A1">→</text>
+      <text x="614" y="1812" font-size="16" font-weight="700" fill="#0F172A">绑定读取</text>
+      <text x="774" y="1812" font-size="16" fill="#0369A1">→</text>
+      <text x="814" y="1812" font-size="16" font-weight="700" fill="#0F172A">生成成功</text>
+      <text x="974" y="1812" font-size="16" fill="#0369A1">→</text>
+      <text x="1014" y="1812" font-size="16" font-weight="700" fill="#0F172A">复制/保存</text>
+      <text x="1188" y="1812" font-size="16" fill="#0369A1">→</text>
+      <text x="1228" y="1812" font-size="16" font-weight="700" fill="#0F172A">跳转尝试</text>
+      <text x="1388" y="1812" font-size="16" fill="#0369A1">→</text>
+      <text x="1428" y="1812" font-size="16" font-weight="700" fill="#0F172A">有效落点</text>
+      <text x="1588" y="1812" font-size="16" fill="#0369A1">→</text>
+      <text x="1628" y="1812" font-size="16" font-weight="700" fill="#0F172A">患者确认</text>
+      <text x="1788" y="1812" font-size="16" fill="#0369A1">→</text>
+      <text x="1828" y="1812" font-size="16" font-weight="700" fill="#0F172A">评价增量校验</text>
+      <text x="2050" y="1812" font-size="16" fill="#0369A1">→</text>
+      <text x="2090" y="1812" font-size="16" font-weight="700" fill="#0F172A">产品/运营优化</text>
+    </g>
+    <path class="data-line" d="M 2530 1239 V 1695 H 2320 V 1756"/>
+  </g>
+
+  <g id="footer">
+    <text x="48" y="1880" font-size="13" font-weight="500" fill="#64748B">产品原则：可信资料生成 · 发布前置先准备 · 有效落点才算到达 · 失败可恢复 · 患者自主发布</text>
+    <text x="3148" y="1880" text-anchor="end" font-size="13" font-weight="600" fill="#64748B">Figma-ready SVG · 3200 × 1900</text>
+  </g>
+</svg>
