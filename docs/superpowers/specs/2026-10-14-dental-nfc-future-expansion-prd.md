@@ -3,22 +3,22 @@
 - 建立日期：2026-10-14
 - 当前开发依据：[最小 MVP PRD](2026-10-10-dental-nfc-commercial-product-design.md)。本文件是后续产品规划和原细则保留，不是本次 MVP 的附加必做清单。
 - 保存内容：收缩前 216 项需求全文、原稳定编号及原整体设计；没有删除未实施功能。
-- 本次取舍：四平台八任务商业 V1 收缩为点评/美团评价试点，医院自助、视频、交易和运营系统后置；必要安全与人工履约由 32 项 MVP 需求承接。
+- 本次取舍：用户最新确认：四个平台原八条患者任务全部恢复首发，并增加微信朋友圈；只后置医院自助、交易和运营自动化，患者素材/视频处理不后置。当前69项需求承接完整患者体验及精简公司后台。
 
 ## 1. 整体设计与恢复顺序
 
 ### 1.1 历史优先级与规则效力
 
-第2部分保留原需求正文和 P0/P1/P2 标记，用于追溯原商业 V1 设计；这些是**历史优先级**，不能直接用于当前 MVP 排期。当前32项的范围、图片限制、两平台覆盖、公司账号和人工交付以最小 MVP 为准。标注“基础约束已承接”的旧需求可能同时包含后置自动化，不能据映射宣称旧需求全文已实现。
+第2部分保留原需求正文和 P0/P1/P2 标记，用于追溯原商业 V1 设计；后台自动化优先级不能直接用于当前 MVP 排期。患者功能已恢复当前MVP，按当前69项及9条任务验收，公司账号和人工后台承接以当前文件为准。标注“基础约束已承接”的旧需求可能同时包含后置自动化，不能据映射宣称旧需求全文已实现。
 
-当前明确后置：打卡/收藏、小红书与抖音、视频合成及编辑、医院自助后台与成员管理、双来源自助素材库、批量导入/审核、在线订单支付与票据退款系统、完整套餐变更及宽限自动化、消息工单/SLA/复测任务系统、看板统计、自助导出和审计查询。对应详细字段、状态、异常及验收均留在第2部分。
+当前明确后置：医院自助后台与成员管理、双来源素材库自助管理页面、批量导入/审核、在线订单支付与票据退款系统、完整套餐变更及宽限自动化、消息工单/SLA/复测任务系统、看板统计、自助导出和审计查询。打卡/收藏、小红书、抖音、朋友圈及患者视频合成/编辑均属于当前首发，不在后置清单。对应详细字段、状态、异常及验收均留在第2部分。
 
 ### 1.2 恢复阶段和实际依赖
 
 | 阶段 | 进入条件及建议功能 | 恢复时必须核对 |
 |---|---|---|
 | E1 减少重复人工 | 试点核心路径稳定、公司重复录入/审核已经形成瓶颈；先医院基础自助、资料/图片上传和审核进展 | 医院账号开通、租户权限、事实/素材审核版本，最少填写原则不能退回全字段必填 |
-| E2 增加渠道和内容 | 已验证对应平台能力且机构有明确需求；优先小红书，再按收益评估抖音；打卡/收藏独立按实际能力开放 | 发布资格、标题正文分步复制、文件保存、视频素材与模板、标识、设备矩阵及合成成本 |
+| E2 后台内容管理自动化 | 患者原八任务及朋友圈当前已保留；后续仅按人工维护压力增加素材库自助、模板管理及审核批处理 | 不能推迟患者渠道/合成；自动化须维持事实、授权、标识及设备支持条件 |
 | E3 自动商业交付 | 订单/核款/退款/开票/物流的人工工作量值得自动化 | 真实渠道、资金幂等、未知结果核查、合同服务边界、折算与税务规则；自动化不迁移掉真实资金记录 |
 | E4 规模运营 | 支持压力/机构数上升且有明确运营决策需求 | 普通员工任务授权、通知回执、工单SLA、人手能履行承诺、MET看板口径与事件数据权限 |
 
@@ -26,9 +26,9 @@
 
 ### 1.3 扩展空间与迁移
 
-继续复用 MVP 的机构/医生/贴片/素材 ID、绑定/审核/规则版本、两平台策略键、服务期限/额度及必要审计。医院自助上线时再绑定经核验机构管理员；不凭医院名称自动领机构，不把公司账号变为医院账号。引入交易系统时核对原人工台账的流水与有效服务期；新增员工权限时默认最小授权。新增平台单独建立适配记录，未验证不得继承点评/美团结论。
+继续复用 MVP 的机构/医生/贴片/素材 ID、绑定/审核/规则版本、各平台任务策略键、服务期限/额度及必要审计。医院自助上线时再绑定经核验机构管理员；不凭医院名称自动领机构，不把公司账号变为医院账号。引入交易系统时核对原人工台账的流水与有效服务期；新增员工权限时默认最小授权。新增平台单独建立适配记录，未验证不得继承点评/美团结论。
 
-MVP 已取消跨页面患者草稿和长期素材留存，后续恢复编辑/视频等能力仍采用当前页面临时规则。原九图、HEIC/视频支持等仅在另行排期、确认成本及复核后启用；不为扩展提前搭建未使用的复杂框架。
+MVP 已取消跨页面患者草稿和长期素材留存，当前及后续编辑/视频等能力均采用页面临时规则。原九图、HEIC/视频处理、基础字幕/片段编辑和合成已恢复当前患者需求，不再另等后期排期；后台自动化仍不提前搭建复杂框架。
 
 ### 1.4 原需求与 MVP 承接索引
 
@@ -36,39 +36,39 @@ MVP 已取消跨页面患者草稿和长期素材留存，后续恢复编辑/视
 
 | 原需求 | 当前 MVP 承接位置 | 后续处理 |
 |---|---|---|
-| [PAT-001](#req-pat-001) 入口前置条件 | [MVP-001](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-001) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [PAT-002](#req-pat-002) 共用主流程 | [MVP-002](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-002) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [PAT-003](#req-pat-003) 点评/美团任务组 | [MVP-002](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-002) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [PAT-004](#req-pat-004) 小红书与抖音 | 无当前开发项 | 完整能力后置，保留原细节；相关法定义务仍按当前适用规则履行 |
-| [PAT-005](#req-pat-005) 患者共用编辑结构 | [MVP-003](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-003) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [PAT-006](#req-pat-006) 页面临时内容与匿名会话 | [MVP-020](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-020)、[MVP-021](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-021) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [PAT-007](#req-pat-007) 准备状态与外部能力证据 | [MVP-005](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-005) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [PAT-008](#req-pat-008) 等待、重试与网络状态 | [MVP-016](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-016)、[MVP-029](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-029) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [PAT-009](#req-pat-009) 患者流程验收红线 | [MVP-030](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-030) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [PAT-010](#req-pat-010) 患者端测试矩阵 | [MVP-001](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-001)、[MVP-030](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-030) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [PAT-011](#req-pat-011) 关闭页面与发布返回边界 | [MVP-008](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-008)、[MVP-021](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-021) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [PAT-012](#req-pat-012) 患者图片上传入口与数量限制 | [MVP-004](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-004) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [PAT-013](#req-pat-013) 图片上传进展与部分失败 | [MVP-004](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-004) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [PAT-014](#req-pat-014) 图片替换、删除与排序 | [MVP-004](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-004)、[MVP-015](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-015) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [PAT-015](#req-pat-015) 图片变更与发布准备同步 | [MVP-005](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-005) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [TASK-001](#req-task-001) 大众点评：写评价 | [MVP-002](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-002)、[MVP-006](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-006) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [TASK-002](#req-task-002) 美团：写评价 | [MVP-002](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-002)、[MVP-007](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-007) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [TASK-003](#req-task-003) 大众点评：打卡 | 无当前开发项 | 完整能力后置，保留原细节；相关法定义务仍按当前适用规则履行 |
-| [TASK-004](#req-task-004) 美团：打卡 | 无当前开发项 | 完整能力后置，保留原细节；相关法定义务仍按当前适用规则履行 |
-| [TASK-005](#req-task-005) 大众点评：收藏 | 无当前开发项 | 完整能力后置，保留原细节；相关法定义务仍按当前适用规则履行 |
-| [TASK-006](#req-task-006) 美团：收藏 | 无当前开发项 | 完整能力后置，保留原细节；相关法定义务仍按当前适用规则履行 |
-| [TASK-007](#req-task-007) 小红书：图文 | 无当前开发项 | 完整能力后置，保留原细节；相关法定义务仍按当前适用规则履行 |
-| [TASK-008](#req-task-008) 抖音：视频 | 无当前开发项 | 完整能力后置，保留原细节；相关法定义务仍按当前适用规则履行 |
-| [TASK-009](#req-task-009) 跳转引导配置与帮助 | [MVP-006](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-006)、[MVP-007](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-007)、[MVP-008](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-008)、[MVP-028](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-028) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [FDB-001](#req-fdb-001) 服务反馈与评价自主权 | [MVP-009](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-009) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [FDB-002](#req-fdb-002) 入口、页面与导航 | [MVP-009](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-009) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [FDB-003](#req-fdb-003) 联系方式与异常交互 | [MVP-009](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-009) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [FDB-004](#req-fdb-004) 联系方式与异常交互：服务电话 | [MVP-009](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-009) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [FDB-005](#req-fdb-005) 联系方式与异常交互：企业微信 | [MVP-009](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-009) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [FDB-006](#req-fdb-006) 联系方式与异常交互：服务时间 | [MVP-009](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-009) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [FDB-007](#req-fdb-007) 联系方式与异常交互：缺失渠道 | [MVP-009](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-009) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [FDB-008](#req-fdb-008) 医院配置、权限与上线 | [MVP-009](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-009) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [FDB-009](#req-fdb-009) 验收 | [MVP-009](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-009) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
+| [PAT-001](#req-pat-001) 入口前置条件 | [PAT-001 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-pat-001) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [PAT-002](#req-pat-002) 共用主流程 | [PAT-002 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-pat-002) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [PAT-003](#req-pat-003) 点评/美团任务组 | [PAT-003 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-pat-003) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [PAT-004](#req-pat-004) 小红书与抖音 | [PAT-004 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-pat-004) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [PAT-005](#req-pat-005) 患者共用编辑结构 | [PAT-005 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-pat-005) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [PAT-006](#req-pat-006) 页面临时内容与匿名会话 | [PAT-006 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-pat-006) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [PAT-007](#req-pat-007) 准备状态与外部能力证据 | [PAT-007 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-pat-007) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [PAT-008](#req-pat-008) 等待、重试与网络状态 | [PAT-008 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-pat-008) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [PAT-009](#req-pat-009) 患者流程验收红线 | [PAT-009 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-pat-009) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [PAT-010](#req-pat-010) 患者端测试矩阵 | [PAT-010 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-pat-010) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [PAT-011](#req-pat-011) 关闭页面与发布返回边界 | [PAT-011 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-pat-011) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [PAT-012](#req-pat-012) 患者图片上传入口与数量限制 | [PAT-012 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-pat-012) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [PAT-013](#req-pat-013) 图片上传进展与部分失败 | [PAT-013 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-pat-013) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [PAT-014](#req-pat-014) 图片替换、删除与排序 | [PAT-014 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-pat-014) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [PAT-015](#req-pat-015) 图片变更与发布准备同步 | [PAT-015 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-pat-015) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [TASK-001](#req-task-001) 大众点评：写评价 | [TASK-001 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-task-001) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [TASK-002](#req-task-002) 美团：写评价 | [TASK-002 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-task-002) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [TASK-003](#req-task-003) 大众点评：打卡 | [TASK-003 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-task-003) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [TASK-004](#req-task-004) 美团：打卡 | [TASK-004 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-task-004) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [TASK-005](#req-task-005) 大众点评：收藏 | [TASK-005 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-task-005) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [TASK-006](#req-task-006) 美团：收藏 | [TASK-006 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-task-006) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [TASK-007](#req-task-007) 小红书：图文 | [TASK-007 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-task-007) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [TASK-008](#req-task-008) 抖音：视频 | [TASK-008 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-task-008) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [TASK-009](#req-task-009) 跳转引导配置与帮助 | [TASK-009 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-task-009) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [FDB-001](#req-fdb-001) 服务反馈与评价自主权 | [FDB-001 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-fdb-001) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [FDB-002](#req-fdb-002) 入口、页面与导航 | [FDB-002 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-fdb-002) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [FDB-003](#req-fdb-003) 联系方式与异常交互 | [FDB-003 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-fdb-003) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [FDB-004](#req-fdb-004) 联系方式与异常交互：服务电话 | [FDB-004 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-fdb-004) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [FDB-005](#req-fdb-005) 联系方式与异常交互：企业微信 | [FDB-005 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-fdb-005) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [FDB-006](#req-fdb-006) 联系方式与异常交互：服务时间 | [FDB-006 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-fdb-006) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [FDB-007](#req-fdb-007) 联系方式与异常交互：缺失渠道 | [FDB-007 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-fdb-007) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [FDB-008](#req-fdb-008) 医院配置、权限与上线 | [FDB-008 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-fdb-008) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [FDB-009](#req-fdb-009) 验收 | [FDB-009 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-fdb-009) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
 | [ORG-001](#req-org-001) 信息架构 | [MVP-024](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-024) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
 | [ORG-002](#req-org-002) 自动化交付流程 | [MVP-024](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-024) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
 | [ORG-003](#req-org-003) 上线与续费协助 | 无当前开发项 | 完整能力后置，保留原细节；相关法定义务仍按当前适用规则履行 |
@@ -101,12 +101,12 @@ MVP 已取消跨页面患者草稿和长期素材留存，后续恢复编辑/视
 | [MAT-006](#req-mat-006) 页面结构与角色操作：平台普通员工 | 无当前开发项 | 完整能力后置，保留原细节；相关法定义务仍按当前适用规则履行 |
 | [MAT-007](#req-mat-007) 列表、筛选及详情 | 无当前开发项 | 完整能力后置，保留原细节；相关法定义务仍按当前适用规则履行 |
 | [MAT-008](#req-mat-008) 上传约束与处理 | [MVP-014](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-014) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [MAT-009](#req-mat-009) 上传约束与处理：图片 | [MVP-004](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-004) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [MAT-010](#req-mat-010) 上传约束与处理：视频 | 无当前开发项 | 完整能力后置，保留原细节；相关法定义务仍按当前适用规则履行 |
-| [MAT-011](#req-mat-011) 上传约束与处理：患者临时上传 | [MVP-004](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-004) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
+| [MAT-009](#req-mat-009) 上传约束与处理：图片 | [MAT-009 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-mat-009) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [MAT-010](#req-mat-010) 上传约束与处理：视频 | [MAT-010 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-mat-010) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [MAT-011](#req-mat-011) 上传约束与处理：患者临时上传 | [MAT-011 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-mat-011) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
 | [MAT-012](#req-mat-012) 审核与可用状态 | [MVP-014](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-014) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
 | [MAT-013](#req-mat-013) 选用、版本、停用与删除 | [MVP-015](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-015) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [MAT-014](#req-mat-014) 生成选材及患者替换 | [MVP-015](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-015) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
+| [MAT-014](#req-mat-014) 生成选材及患者替换 | [MAT-014 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-mat-014) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
 | [MAT-015](#req-mat-015) 验收 | 无当前开发项 | 完整能力后置，保留原细节；相关法定义务仍按当前适用规则履行 |
 | [MAT-016](#req-mat-016) 素材审核队列与排序 | 无当前开发项 | 完整能力后置，保留原细节；相关法定义务仍按当前适用规则履行 |
 | [MAT-017](#req-mat-017) 审核任务领取与转派 | 无当前开发项 | 完整能力后置，保留原细节；相关法定义务仍按当前适用规则履行 |
@@ -114,19 +114,19 @@ MVP 已取消跨页面患者草稿和长期素材留存，后续恢复编辑/视
 | [MAT-019](#req-mat-019) 普通素材审核时限与升级 | 无当前开发项 | 完整能力后置，保留原细节；相关法定义务仍按当前适用规则履行 |
 | [MAT-020](#req-mat-020) 批量审核与逐项提交 | 无当前开发项 | 完整能力后置，保留原细节；相关法定义务仍按当前适用规则履行 |
 | [MAT-021](#req-mat-021) 医院审核进度与重新提交 | 无当前开发项 | 完整能力后置，保留原细节；相关法定义务仍按当前适用规则履行 |
-| [AI-001](#req-ai-001) 生成规则 | [MVP-003](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-003)、[MVP-016](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-016) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
+| [AI-001](#req-ai-001) 生成规则 | [AI-001 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-ai-001) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
 | [AI-002](#req-ai-002) 内容质量与版本发布 | [MVP-017](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-017) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
 | [AI-003](#req-ai-003) 模型路由、成本与缓存 | [MVP-029](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-029) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
 | [AI-004](#req-ai-004) 授权证据与生成追溯 | [MVP-014](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-014)、[MVP-017](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-017)、[MVP-032](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-032) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
 | [AI-005](#req-ai-005) 投诉核查与处置 | [MVP-017](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-017) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [AI-006](#req-ai-006) 无真实经历输入的评价边界 | [MVP-016](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-016) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
+| [AI-006](#req-ai-006) 无真实经历输入的评价边界 | [AI-006 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-ai-006) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
 | [AI-007](#req-ai-007) 内容质量、成本与留档验收 | 无当前开发项 | 完整能力后置，保留原细节；相关法定义务仍按当前适用规则履行 |
-| [AI-008](#req-ai-008) 编辑页标识与提示精简 | [MVP-022](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-022) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [AI-009](#req-ai-009) 文案复制与必要标识 | [MVP-005](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-005)、[MVP-022](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-022) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [AI-010](#req-ai-010) 图片视频标识与交付一致性 | [MVP-005](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-005)、[MVP-022](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-022) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [AI-011](#req-ai-011) 发布时必要声明提示 | [MVP-022](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-022) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [AI-012](#req-ai-012) 患者修改后的标识判定 | [MVP-022](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-022) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [AI-013](#req-ai-013) 标识规则版本、异常与恢复 | [MVP-022](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-022) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
+| [AI-008](#req-ai-008) 编辑页标识与提示精简 | [AI-008 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-ai-008) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [AI-009](#req-ai-009) 文案复制与必要标识 | [AI-009 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-ai-009) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [AI-010](#req-ai-010) 图片视频标识与交付一致性 | [AI-010 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-ai-010) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [AI-011](#req-ai-011) 发布时必要声明提示 | [AI-011 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-ai-011) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [AI-012](#req-ai-012) 患者修改后的标识判定 | [AI-012 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-ai-012) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
+| [AI-013](#req-ai-013) 标识规则版本、异常与恢复 | [AI-013 当前完整需求](2026-10-10-dental-nfc-commercial-product-design.md#req-ai-013) | 当前首发保留，患者能力不后置；后台入口按精简管理方式供给 |
 | [SEC-001](#req-sec-001) 患者数据与租户隔离 | [MVP-020](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-020) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
 | [SEC-002](#req-sec-002) 登录与账号生命周期 | [MVP-018](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-018) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
 | [SEC-003](#req-sec-003) 固定权限与高风险操作 | [MVP-018](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-018) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
@@ -166,9 +166,9 @@ MVP 已取消跨页面患者草稿和长期素材留存，后续恢复编辑/视
 | [DATA-016](#req-data-016) 解密口令与导出通知 | 无当前开发项 | 完整能力后置，保留原细节；相关法定义务仍按当前适用规则履行 |
 | [DATA-017](#req-data-017) 退出期导出、清理与审计 | [MVP-027](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-027) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
 | [DATA-018](#req-data-018) 患者基础用途告知 | [MVP-022](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-022) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [DATA-019](#req-data-019) 文字编辑与 AI 再生成告知 | [MVP-003](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-003)、[MVP-022](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-022) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [DATA-020](#req-data-020) 患者图片上传告知与权利确认 | [MVP-004](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-004)、[MVP-022](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-022) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [DATA-021](#req-data-021) 患者敏感信息处理 | [MVP-004](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-004)、[MVP-016](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-016)、[MVP-022](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-022) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
+| [DATA-019](#req-data-019) 文字编辑与 AI 再生成告知 | [PAT-005](2026-10-10-dental-nfc-commercial-product-design.md#req-pat-005)、[MVP-022](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-022) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
+| [DATA-020](#req-data-020) 患者图片上传告知与权利确认 | [MAT-011](2026-10-10-dental-nfc-commercial-product-design.md#req-mat-011)、[MVP-022](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-022) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
+| [DATA-021](#req-data-021) 患者敏感信息处理 | [MAT-011](2026-10-10-dental-nfc-commercial-product-design.md#req-mat-011)、[MVP-016](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-016)、[MVP-022](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-022) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
 | [DATA-022](#req-data-022) 患者内容用途限制 | [MVP-022](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-022) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
 | [DATA-023](#req-data-023) 撤回与清除本次内容 | [MVP-021](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-021) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
 | [DATA-024](#req-data-024) 患者告知版本与必要证据 | [MVP-022](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-022) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
@@ -180,7 +180,7 @@ MVP 已取消跨页面患者草稿和长期素材留存，后续恢复编辑/视
 | [BIZ-005](#req-biz-005) 验收、激活与售后 | [MVP-012](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-012)、[MVP-026](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-026) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
 | [BIZ-006](#req-biz-006) 取消与退款 | [MVP-026](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-026) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
 | [BIZ-007](#req-biz-007) 订单与履约验收 | 无当前开发项 | 完整能力后置，保留原细节；相关法定义务仍按当前适用规则履行 |
-| [BIZ-008](#req-biz-008) 贴片状态与入口映射 | [MVP-001](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-001)、[MVP-012](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-012) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
+| [BIZ-008](#req-biz-008) 贴片状态与入口映射 | [PAT-001](2026-10-10-dental-nfc-commercial-product-design.md#req-pat-001)、[MVP-012](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-012) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
 | [BIZ-009](#req-biz-009) 贴片启用停用与恢复 | [MVP-013](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-013) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
 | [BIZ-010](#req-biz-010) 遗失标记与找回检查 | [MVP-013](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-013) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
 | [BIZ-011](#req-biz-011) 本机构医生换绑 | [MVP-013](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-013) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
@@ -222,7 +222,7 @@ MVP 已取消跨页面患者草稿和长期素材留存，后续恢复编辑/视
 | [SVC-019](#req-svc-019) 套餐到期与停用提醒去重 | 无当前开发项 | 完整能力后置，保留原细节；相关法定义务仍按当前适用规则履行 |
 | [SVC-020](#req-svc-020) 通知发送失败与备用渠道 | 无当前开发项 | 完整能力后置，保留原细节；相关法定义务仍按当前适用规则履行 |
 | [SVC-021](#req-svc-021) 通知状态、事项更新与催办终止 | 无当前开发项 | 完整能力后置，保留原细节；相关法定义务仍按当前适用规则履行 |
-| [INT-001](#req-int-001) 平台适配与错误恢复 | [MVP-006](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-006)、[MVP-007](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-007)、[MVP-028](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-028) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
+| [INT-001](#req-int-001) 平台适配与错误恢复 | [TASK-001](2026-10-10-dental-nfc-commercial-product-design.md#req-task-001)、[TASK-002](2026-10-10-dental-nfc-commercial-product-design.md#req-task-002)、[MVP-028](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-028) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
 | [INT-002](#req-int-002) 配置变更与回退 | [MVP-028](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-028) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
 | [INT-003](#req-int-003) 故障降级与写入一致性 | [MVP-020](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-020)、[MVP-028](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-028)、[MVP-029](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-029) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
 | [INT-004](#req-int-004) 云服务备份与灾难恢复 | [MVP-023](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-023) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
@@ -233,7 +233,7 @@ MVP 已取消跨页面患者草稿和长期素材留存，后续恢复编辑/视
 | [INT-009](#req-int-009) 每周与异常触发复测 | [MVP-031](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-031) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
 | [INT-010](#req-int-010) 路径暂停、修复与恢复准入 | [MVP-028](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-028) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
 | [INT-011](#req-int-011) 平台操作指引版本更新 | [MVP-028](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-028) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
-| [MET-001](#req-met-001) 北极星指标 | [MVP-008](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-008) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
+| [MET-001](#req-met-001) 北极星指标 | [TASK-009](2026-10-10-dental-nfc-commercial-product-design.md#req-task-009) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
 | [MET-002](#req-met-002) 漏斗事件 | [MVP-029](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-029) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
 | [MET-003](#req-met-003) 补充埋点、留存与统计 | [MVP-029](2026-10-10-dental-nfc-commercial-product-design.md#req-mvp-029) | 基础约束/人工承接已纳入；原完整能力按阶段复核恢复 |
 | [MET-004](#req-met-004) 发布数据看板结构 | 无当前开发项 | 完整能力后置，保留原细节；相关法定义务仍按当前适用规则履行 |
